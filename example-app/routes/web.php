@@ -52,3 +52,11 @@ Route::get('/admincustomer', function(){
 
     return view('adminCusView')->with('users',$data);
 });
+
+//Admin Order View
+Route::get('/adminorder', function(){
+
+    $data=App\Models\Order::all();
+    
+    return view('adminOrderView')->with('orders',$data);
+});
