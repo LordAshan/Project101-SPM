@@ -387,6 +387,29 @@ body {
         <div class="container" >
        
 
+        <div class="topnav">
+            <div class="search-container">
+                <form method="GET" type="get" action="{{url('/customersearch')}}">
+                {{csrf_field()}}
+
+                <table style="border: none;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                <input type="text" placeholder="Search by name and address..." name="searchcus">
+                                </td>
+                                <td>
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                   
+                    
+                </form>
+            </div>
+        </div>
+
         
 
         <table class="table table-light table-bordered">

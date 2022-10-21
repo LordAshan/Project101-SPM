@@ -60,3 +60,6 @@ Route::get('/adminorder', function(){
     
     return view('adminOrderView')->with('orders',$data);
 });
+
+//Admin Customer Search
+Route::get('/customersearch', 'App\Http\Controllers\UserController@search_cus');
