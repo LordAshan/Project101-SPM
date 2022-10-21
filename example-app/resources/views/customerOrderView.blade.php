@@ -1,4 +1,4 @@
-@extends('layouts.employeeNav')
+@extends('layouts.customerNav')
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
@@ -7,18 +7,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>employee add menu</title>
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
     <style>
         * {
             box-sizing: border-box;
-        }
-
-        .custom-file-upload {
-            background-color: #889ee3;
-            display: block;
-            float: center;
-            padding-left: 40%;
         }
 
         input[type=text],
@@ -110,70 +104,63 @@
 </head>
 
 <body style="background-color: #F9F5EB;">
-    <div class="container" style="height:100%">
-        <h1 style="text-align: right; color:#1C3879; font-style:Sans-serif;">FOOD ITEM</h1>
+    <div class="container">
+        <h1 style="text-align: right; color:#1C3879; font-style:Sans-serif;">CUSTOMER REVIEW</h1>
         <hr /><br /><br />
 
         <div class="container" style="padding-top:10px; padding-bottom:10px; border-radius:15px; background-color: #EAE3D2; max-width:600px; display:block; margin-left:auto; margin-right: auto;">
-               <form method="post" action="{{ route('image.store') }}" 
+        <form method="post" 
 		enctype="multipart/form-data">
-    @csrf
+   
 
+                <span class="close">&times;</span>
+                
 
-
-                <span class="close" onclick="location='/employeeMenuView'">&times;</span>
-
-
-                <div class="row">
-                    <!-- <img src="{{ asset('images/dwnldLogo.png') }}" alt="description of myimage" class="center" style="max-height: 100px; max-width:100px; cursor:pointer;"> -->
-                    <label class="custom-file-upload">
-                        <input type="file" class="form-control" required name="image">
-                    </label>
-                </div>
-
+               
                 <div class="row">
                     <div class="col-25">
-                        <label for="foodName"><b>Name</b></label>
+                    <h3 class="menuText">Item Name: cheese margherita</h3>
                     </div>
-                    <div class="col-75">
-                        <input type="text" id="foodName" name="foodName" placeholder="Enter name..">
-                    </div>
+                
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="ingredients"><b>Ingredients</b></label>
+                    <h3 class="menuText">Special Ingredients:cheese, tomato </h3>
                     </div>
-                    <div class="col-75">
-                        <input type="text" id="ingredients" name="ingredients" placeholder="Enter special ingredients..">
-                    </div>
+       
                 </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="foodPrice"><b>Price (LKR.)</b></label>
-                    </div>
-                    <div class="col-75">
-                        <input type="text" id="price" name="price" placeholder="Enter price.." onkeypress="return isNumber(event)" required="">
-                    </div>
-                </div>
+                <label for="quantity">Quantity:</label>
+                <select name="quantity" id="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                 
+                </select>
 
                 <div class="row">
-                    <input type="submit" style="margin-top: 15px;" value="Save">
+                    <div class="col-25">
+                    <h3 class="menuText">Price (LKR.) : 1200 </h3>
+                    </div>
+                
+                </div>
+            
+                                <div class="row">
+                                    
+                    <a href="/customerMenuView" class="menuEditBtn fa fa-edit" style="font-size: 25px;">Order</a>
+                     
                 </div>
             </form>
         </div>
     </div>
+    
     @endsection
-
-    <script>
-        function isNumber(evt) {
-            evt = (evt) ? evt : window.event;
-            var charCode = (evt.which) ? evt.which : evt.keyCode;
-            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-                return false;
-            }
-            return true;
-        }
-    </script>
 </body>
 
 </html>
