@@ -106,5 +106,36 @@ Route::get('/updateFood/{id}', 'App\Http\Controllers\AdminController@updateFoodD
 Route::post('/updateFood', 'App\Http\Controllers\AdminController@updateFood' );
 
 
+
 Route::get('/updateEmpFood/{id}', 'App\Http\Controllers\AdminController@updateFoodDetails' );
 Route::post('/updateEmpFood', 'App\Http\Controllers\AdminController@updateEmpFood' );
+=======
+// Route::get('/dashboard','PagesController@indexAdminDashboard');
+
+
+//Customer Create Account
+Route::get('/createaccount', function(){
+    return view('cusCreateAccount');
+});
+
+Route::post('/saveUser','App\Http\Controllers\UserController@store');
+
+//Admin Customer View
+Route::get('/admincustomer', function(){
+
+    $data=App\Models\User::all();
+
+    return view('adminCusView')->with('users',$data);
+});
+
+//Admin Order View
+Route::get('/adminorder', function(){
+
+    $data=App\Models\Order::all();
+    
+    return view('adminOrderView')->with('orders',$data);
+});
+
+//Admin Customer Search
+Route::get('/customersearch', 'App\Http\Controllers\UserController@search_cus');
+
