@@ -63,3 +63,6 @@ Route::get('/adminorder', function(){
 
 //Admin Customer Search
 Route::get('/customersearch', 'App\Http\Controllers\UserController@search_cus');
+
+//Admin Customer PDF
+Route::get('/customer_pdf', 'App\Http\Controllers\UserController@customer_pdf');

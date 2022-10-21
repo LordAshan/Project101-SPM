@@ -45,5 +45,14 @@ class UserController extends Controller
         return view('adminCusView', compact('users'));
     }
 
+    public function customer_pdf() {
+
+        $data = User::get();
+        $pdf = PDF::loadView('pdf.adminCusReport', [
+            'users' => $data
+        ]);
+        return $pdf->download('Customer_Report.pdf');
+      }
+
 
 }

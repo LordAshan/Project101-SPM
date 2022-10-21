@@ -386,7 +386,8 @@ body {
         <hr />
         <div class="container" >
        
-
+        <a class="btn btn-success" href="{{url('/customer_pdf')}}">View PDF</a>
+        <div class="topnav">
         <div class="topnav">
             <div class="search-container">
                 <form method="GET" type="get" action="{{url('/customersearch')}}">
