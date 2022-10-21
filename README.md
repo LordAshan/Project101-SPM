@@ -13,15 +13,19 @@
 # PUZZEL BAKERY
 
 
-#Group Details
+# Group Details
 
 
-Member 01 IT20252304 EDIRISINGHE B. M
-Member 02 IT20163204 MANIMENDRA N. H
-Member 03 IT20252786 EKANAYAKA E. M. A. I. B
-Member 04 IT20241032 RAVISHAN S. A. A
+# Member 01 IT20252304 EDIRISINGHE B. M
+# Member 01 IT20252304 EDIRISINGHE B. M
+# Member 02 IT20163204 MANIMENDRA N. H
+# Member 03 IT20252786 EKANAYAKA E. M. A. I. B
+# Member 04 IT20241032 RAVISHAN S. A. A
 
-#* puzzel bakery is a shop which is seeking to deploy a website for better customer service.
+
+
+
+# puzzel bakery is a shop which is seeking to deploy a website for better customer service.
 
 
 
