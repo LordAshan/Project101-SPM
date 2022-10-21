@@ -1,4 +1,4 @@
-@extends('layouts.employeeNav')
+@extends('layouts.adminNav')
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
@@ -8,17 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>employee add menu</title>
+    <title>Admin add menu</title>
     <style>
         * {
             box-sizing: border-box;
-        }
-
-        .custom-file-upload {
-            background-color: #889ee3;
-            display: block;
-            float: center;
-            padding-left: 40%;
         }
 
         input[type=text],
@@ -50,6 +43,13 @@
             background-color: #45a049;
         }
 
+        .custom-file-upload{
+            background-color: #e34d5c;
+            display: block;
+            float: center;
+            padding-left: 40%;
+        }
+
         .close {
             font-size: 45px;
             font-weight: 600;
@@ -75,6 +75,35 @@
             border-radius: 5px;
             background-color: #f2f2f2;
             padding: 20px;
+        }
+
+        .navcontainer {
+            border-radius: 5px;
+            background-color: #B85252;
+            padding: 20px;
+            margin-left: -2%;
+            margin-top: -10%;
+            width: 15%;
+            height: 100%;
+            position: fixed;
+            display: block;
+        }
+
+        .navButton {
+            width: 100%;
+            background-color: #B85252;
+            font-size: large;
+            border: none;
+            text-align: left;
+        }
+
+        .navButton:hover {
+            color: white;
+            transition: 0.3s;
+        }
+
+        .navButton:active {
+            color: greenyellow;
         }
 
         .col-25 {
@@ -106,28 +135,97 @@
                 margin-top: 0;
             }
         }
+
+        /* The side navigation menu */
+        .sidebar {
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #B85252;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+            border-top-right-radius: 15px;
+        }
+
+        /* Sidebar links */
+        .sidebar a {
+            display: block;
+            color: black;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+        /* Active/current link */
+        .sidebar a.active {
+            background-color: #F58840;
+            color: white;
+        }
+
+        /* Links on mouse-over */
+        .sidebar a:hover:not(.active) {
+            background-color: #DEAC8A;
+            color: white;
+        }
+
+        /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+        div.content {
+            margin-left: 200px;
+            padding: 1px 16px;
+            height: 1000px;
+        }
+
+        /* On screens that are less than 700px wide, make the sidebar into a topbar */
+        @media screen and (max-width: 700px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .sidebar a {
+                float: left;
+            }
+
+            div.content {
+                margin-left: 0;
+            }
+        }
+
+        /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+        @media screen and (max-width: 400px) {
+            .sidebar a {
+                text-align: center;
+                float: none;
+            }
+        }
     </style>
 </head>
 
-<body style="background-color: #F9F5EB;">
-    <div class="container" style="height:100%">
-        <h1 style="text-align: right; color:#1C3879; font-style:Sans-serif;">FOOD ITEM</h1>
+<body style="background-color: #E9EADE;">
+    <div class="container" style="background-color: #E9EADE; height:100%">
+        <h1 style="text-align: right; color:#1C3879; font-style:Sans-serif;">FOOD ITEMS</h1>
         <hr /><br /><br />
 
-        <div class="container" style="padding-top:10px; padding-bottom:10px; border-radius:15px; background-color: #EAE3D2; max-width:600px; display:block; margin-left:auto; margin-right: auto;">
+        <!-- Form to add food item -->
+        <div class="container" style="padding-top:10px; padding-bottom:10px; border-radius:15px; background-color: #EED5A8; max-width:600px; display:block; margin-left:auto; margin-right: auto;">
             <form method="post" action="{{ route('image.store') }}" enctype="multipart/form-data">
                 @csrf
 
 
-                <span class="close" onclick="location='/employeeMenuView'">&times;</span>
+                {{csrf_field()}}
 
+                <span class="close"  onclick="location='/adminMenuView'">&times;</span>
+
+                <!-- new file upload -->                
 
                 <div class="row">
                     <!-- <img src="{{ asset('images/dwnldLogo.png') }}" alt="description of myimage" class="center" style="max-height: 100px; max-width:100px; cursor:pointer;"> -->
                     <label class="custom-file-upload">
-                        <input type="file" class="form-control" required name="image">
+                    <input type="file" class="form-control" required name="image">
                     </label>
                 </div>
+
 
                 <div class="row">
                     <div class="col-25">
@@ -150,7 +248,7 @@
                         <label for="foodPrice"><b>Price (LKR.)</b></label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="price" name="price" placeholder="Enter price.." onkeypress="return isNumber(event)" required="">
+                    <input type="text" id="price" name="price" placeholder="Enter price.." onkeypress="return isNumber(event)" required="">
                     </div>
                 </div>
 
@@ -173,5 +271,4 @@
         }
     </script>
 </body>
-
 </html>
