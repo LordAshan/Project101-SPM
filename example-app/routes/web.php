@@ -44,3 +44,11 @@ Route::get('/createaccount', function(){
 });
 
 Route::post('/saveUser','App\Http\Controllers\UserController@store');
+
+//Admin Customer View
+Route::get('/admincustomer', function(){
+
+    $data=App\Models\User::all();
+
+    return view('adminCusView')->with('users',$data);
+});
