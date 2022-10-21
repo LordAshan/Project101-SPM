@@ -35,5 +35,15 @@ class UserController extends Controller
         //return view('/');
     }
 
+    //Search
+    public function search_cus() {
+        $search_text = $_GET['searchcus'];
+        $users = User::where('name', 'LIKE', '%'.$search_text.'%')
+        ->orwhere('address', 'LIKE', '%'.$search_text.'%')
+        ->get();
+
+        return view('adminCusView', compact('users'));
+    }
+
 
 }
