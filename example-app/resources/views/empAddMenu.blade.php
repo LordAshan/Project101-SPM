@@ -1,3 +1,5 @@
+@extends('layouts.employeeNav')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>Employee add menu</title>
     <style>
         * {
             box-sizing: border-box;
@@ -103,23 +105,29 @@
 <body style="background-color: #F9F5EB;">
     <div class="container">
         <h1 style="text-align: right; color:#1C3879; font-style:Sans-serif;">FOOD ITEMS</h1>
-        <hr /><br/><br/>
+        <hr /><br /><br />
 
+   
+   
+        <!-- Form to add food item -->
         <div class="container" style="padding-top:10px; padding-bottom:10px; border-radius:15px; background-color: #EAE3D2; max-width:600px; display:block; margin-left:auto; margin-right: auto;">
-            <form action="/action_page.php">
+        <form method="post" action="{{ route('image.store') }}" 
+		enctype="multipart/form-data">
+    @csrf
 
                 <span class="close">&times;</span>
 
 
                 <div class="row">
-                    <img src="{{ asset('images/dwnldLogo.png') }}" alt="description of myimage" class="center" style="max-height: 100px; max-width:100px; cursor:pointer;">
+                    <!-- <img src="{{ asset('images/dwnldLogo.png') }}" alt="description of myimage" class="center" style="max-height: 100px; max-width:100px; cursor:pointer;"> -->
+                    <input type="file" class="form-control" required name="image">
                 </div>
                 <div class="row">
                     <div class="col-25">
                         <label for="foodName"><b>Name</b></label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="foodName" name="foodItemName" placeholder="Enter name..">
+                        <input type="text" id="foodName" name="foodName" placeholder="Enter name..">
                     </div>
                 </div>
                 <div class="row">
@@ -127,7 +135,7 @@
                         <label for="ingredients"><b>Ingredients</b></label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="ingredients" name="foodIngredients" placeholder="Enter special ingredients..">
+                        <input type="text" id="ingredients" name="ingredients" placeholder="Enter special ingredients..">
                     </div>
                 </div>
                 <div class="row">
@@ -135,7 +143,7 @@
                         <label for="foodPrice"><b>Price (LKR.)</b></label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="foodPrice" name="foodItemPrice" placeholder="Enter price..">
+                        <input type="text" id="price" name="price" placeholder="Enter price..">
                     </div>
                 </div>
 
@@ -145,7 +153,8 @@
             </form>
         </div>
     </div>
+    
 
 </body>
-
+@endsection
 </html>
