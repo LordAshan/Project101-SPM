@@ -36,3 +36,11 @@ Route::get('/empaddmenu', function(){
 Route::get('/about','PagesController@indexAboutUs');
 
 // Route::get('/dashboard','PagesController@indexAdminDashboard');
+
+
+//Customer Create Account
+Route::get('/createaccount', function(){
+    return view('cusCreateAccount');
+});
+
+Route::post('/saveUser','App\Http\Controllers\UserController@store');
