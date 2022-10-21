@@ -25,7 +25,7 @@
 
 
 
-# puzzel bakery is a shop which is seeking to deploy a website for better customer service.
+### puzzel bakery is a shop which is seeking to deploy a website for better customer service.
 
 
 
