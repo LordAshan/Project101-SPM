@@ -29,24 +29,7 @@ Route::get('/', function () {
 //     return view('aboutUs');
 // });
 
-Route::get('/dashboard', function(){
-    return view('adminDashboard');
-});
 
-Route::get('/empAddMenu', function(){
-    return view('empAddMenu');
-});
-
-Route::get('/adminAddMenu', function(){
-    return view('adminAddMenu');
-});
-
-Route::get('/adminMenuView', function(){
-    return view('adminMenuView');
-});
-Route::get('/adminMenuView', function(){
-    return view('adminMenuView');
-});
 
 //customer view menu list
 Route::get('/customerMenuView', function(){
