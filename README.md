@@ -8,6 +8,23 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+
+# SER_099
+# PUZZEL BAKERY
+
+
+#Group Details
+
+
+Member 01 IT20252304 EDIRISINGHE B. M
+Member 02 IT20163204 MANIMENDRA N. H
+Member 03 IT20252786 EKANAYAKA E. M. A. I. B
+Member 04 IT20241032 RAVISHAN S. A. A
+
+#* puzzel bakery is a shop which is seeking to deploy a website for better customer service.
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
