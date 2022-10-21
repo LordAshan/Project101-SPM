@@ -123,7 +123,7 @@
                         <label for="customerName"><b> Customer Name</b></label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="customerName" name="customerName" placeholder="Enter name..">
+                        <input type="text" required id="customerName" name="customerName" placeholder="Enter name..  ">
                     </div>
                 </div>
                 <div class="row">
@@ -131,7 +131,7 @@
                         <label for="complaint"><b>complements / complaints</b></label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="complaint" name="complaint" placeholder="Enter complements/complaints">
+                        <input type="text"  required id="complaint" name="complaint" placeholder="Enter complements/complaints">
                     </div>
                 </div>
                 <div class="row">
@@ -139,7 +139,7 @@
                         <label for="attachment"><b>Attachment</b></label>
                     </div>
                      <div class="row">
-                     <input type="file" id="image" name="image" class="form-control" >
+                     <input type="file" id="image" required name="image" class="form-control" >
 
                 </div>
                 </div>
